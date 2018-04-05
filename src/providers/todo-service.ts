@@ -26,6 +26,9 @@ export class TodoService {
   getTodos(){
     return this.todos;
   }
+  getArchivedTodos(){
+    return this.archivedTodos;
+  }
 
   addTodo(todo){
     this.todos.push(todo);
