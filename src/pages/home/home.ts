@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, reorderArray } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -15,6 +15,10 @@ export class HomePage {
 
   toogleReorder(){
     this.reorderIsEnabled = !this.reorderIsEnabled;
+  }
+
+  itemReordered($event){
+    reorderArray(this.todos, $event);
   }
 
   openTodoAlert(){
