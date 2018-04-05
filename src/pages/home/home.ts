@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, reorderArray } from 'ionic-angular';
+import { TodoService } from "../../providers/todo-service";
 import { ArchivedTodosPage } from "../archived-todos/archived-todos"
 
 @Component({
@@ -12,7 +13,11 @@ export class HomePage {
   public archivedTodosPage = ArchivedTodosPage;
 
 
-  constructor(public navCtrl: NavController, private alertController: AlertController) {
+  constructor(private todoService: TodoService, public navCtrl: NavController, private alertController: AlertController) {
+    this.todos = this.todoService.getTodos();
+  }
+
+  archiveTodo(todoIndex){
 
   }
 
